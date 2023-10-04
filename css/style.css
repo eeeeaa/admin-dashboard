@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Mooli');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+    --primary-color:#f8fafc;
+
+    --side-bar-color: #27272a;
+
+    --secondary-color:#09090b;
+    --secondary-color-header: #18181b;
+    --secondary-color-section: #27272a;
+    --secondary-color-card: #3f3f46;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: Mooli, Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
 }
 
 li {
@@ -35,18 +48,14 @@ li {
     display: grid;
     min-height: 100vh;
     grid-template: 1fr 5fr/1fr 5fr;
-}
-
-.container div {
-    background-color: burlywood;
-    border: 1px solid;
+    background-color: var(--secondary-color);
 }
 
 .container .header {
     grid-area: 1/2/2/-1;
-    
     display: grid;
     grid-template: repeat(2,1fr)/repeat(2,1fr);
+    background-color: var(--secondary-color-header);
 }
 
 .container .header .search-bar {
@@ -87,6 +96,7 @@ li {
 
 .container .side-bar {
     grid-area: 1/1/-1/2;
+    background-color: var(--side-bar-color);
 
     padding-top: 1.5em;
     display: grid;
@@ -145,20 +155,29 @@ li {
 }
 
 .container .content .projects .project-card-list {
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color-section);
+
     display: grid;
     gap:2em;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }
 
 .container .content .projects .project-card {
+    padding: 1em;
+    border-radius: 0.5em;
+    border-left: 1em solid var(--secondary-color-header);
+    background-color: var(--secondary-color-card);
+
     display: flex;
-    height: 250px;
+    height: 280px;
     flex-direction: column;
     justify-content: center;
 }
 
 .container .content .projects .project-card .action-bar {
-    margin-top: 1em;
+    margin-top: 2em;
     align-self: flex-end;
 
     display: flex;
@@ -173,6 +192,10 @@ li {
 }
 
 .container .content .announcements .notice-card-list {
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color-section);
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -181,6 +204,8 @@ li {
 
 .container .content .announcements .notice-card {
     padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color-card);
 }
 
 .container .content .announcements .notice-card .notice-title{
@@ -192,6 +217,10 @@ li {
 }
 
 .container .content .trending .trending-profile-list {
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color-section);
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -200,6 +229,8 @@ li {
 
 .container .content .trending .trending-profile {
     padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color-card);
 
     display: grid;
     grid-template: repeat(2,1fr)/1fr 3fr;
@@ -207,5 +238,7 @@ li {
 
 .container .content .trending .trending-profile .profile-img-small{
     grid-area: 1/1/-1/2;
+    justify-self: center;
+    align-self: center;
 }
 
