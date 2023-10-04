@@ -1,12 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Mooli');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Mooli, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 li {
     list-style: none;
+}
+
+.profile-img-large {
+    width:64px;
+    height:64px;
+    border-radius: 32px;
+}
+
+.profile-img-small {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
 }
 
 .container {
@@ -22,12 +36,14 @@ li {
 
 .container .header {
     grid-area: 1/2/2/-1;
+    
     display: grid;
     grid-template: repeat(2,1fr)/repeat(2,1fr);
 }
 
 .container .header .search-bar {
     grid-area: 1/1/2/-1;
+
     display: grid;
     grid-template: 1fr/5fr repeat(3,1fr);
     align-items: center;
@@ -37,16 +53,50 @@ li {
     width: 70%;
 }
 
-.container .content {
-    grid-area: 2/2/-1/-1;
+.container .header .user-info {
+    display: grid;
+    grid-template: repeat(2, 1fr)/1fr 3fr;
+    align-items: center;
+}
+
+.container .header .user-info .profile-img-large {
+    grid-area: 1/1/-1/2;
+    justify-self: center;
+}
+
+.container .header .util-buttons {
+    display: grid;
+    grid-template:1fr/ repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.container .header .util-buttons button {
+    padding: 0.5em 2em;
+    border-radius: 16px;
+    border: 1px solid transparent;
 }
 
 .container .side-bar {
     grid-area: 1/1/-1/2;
+
+    padding-top: 1.5em;
     display: grid;
     grid-template: repeat(3,auto) / auto;
     align-content: flex-start;
     gap: 2em;
+}
+
+.container .side-bar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.container .side-bar .logo,
+.container .side-bar .menu-item {
+    display: flex;
+    align-items: center;
 }
 
 .container .side-bar .logo {
@@ -58,3 +108,57 @@ li {
     font-size: large;
     font-weight: 700;
 }
+
+.container .content {
+    grid-area: 2/2/-1/-1;
+
+    display: grid;
+    gap:2em;
+    padding: 2em;
+    grid-template: repeat(2,1fr)/2fr 1fr;
+}
+
+.container .content .section-title {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.container .content .projects{
+    grid-area: 1/1/-1/2;
+
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+    flex-grow: 1;
+}
+
+.container .content .projects .project-card-list {
+    display: grid;
+    gap:2em;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.container .content .projects .project-card {
+    display: flex;
+    height: 250px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .content .projects .project-card .action-bar {
+    margin-top: 1em;
+    align-self: flex-end;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0.5em 2em;
+}
+
+.container .content .announcements{
+    grid-area: 1/2/2/-1;
+}
+.container .content .trending{
+    grid-area: 2/2/-1/-1;
+}
+
