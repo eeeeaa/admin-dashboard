@@ -11,6 +11,14 @@ li {
     list-style: none;
 }
 
+.content-title{
+    font-weight: 700;
+}
+
+.content-subtitle {
+    font-weight: 300;
+}
+
 .profile-img-large {
     width:64px;
     height:64px;
@@ -26,7 +34,7 @@ li {
 .container {
     display: grid;
     min-height: 100vh;
-    grid-template: 1fr 5fr/1fr 3fr;
+    grid-template: 1fr 5fr/1fr 5fr;
 }
 
 .container div {
@@ -123,13 +131,17 @@ li {
     font-weight: 700;
 }
 
-.container .content .projects{
-    grid-area: 1/1/-1/2;
-
+.container .content .projects,
+.container .content .announcements,
+.container .content .trending {
     display: flex;
     flex-direction: column;
     gap:2em;
     flex-grow: 1;
+}
+
+.container .content .projects{
+    grid-area: 1/1/-1/2;
 }
 
 .container .content .projects .project-card-list {
@@ -157,8 +169,43 @@ li {
 
 .container .content .announcements{
     grid-area: 1/2/2/-1;
+    padding: 0.5em;
 }
+
+.container .content .announcements .notice-card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1em;
+}
+
+.container .content .announcements .notice-card {
+    padding: 0.5em;
+}
+
+.container .content .announcements .notice-card .notice-title{
+    font-size: large;
+}
+
 .container .content .trending{
     grid-area: 2/2/-1/-1;
+}
+
+.container .content .trending .trending-profile-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1em;
+}
+
+.container .content .trending .trending-profile {
+    padding: 0.5em;
+
+    display: grid;
+    grid-template: repeat(2,1fr)/1fr 3fr;
+}
+
+.container .content .trending .trending-profile .profile-img-small{
+    grid-area: 1/1/-1/2;
 }
 
