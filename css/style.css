@@ -253,6 +253,11 @@ a:hover {
     justify-content: center;
 }
 
+.container .content .projects .project-card .card-title {
+    font-size: x-large;
+    margin-bottom: 1em;
+}
+
 .container .content .projects .project-card .action-bar {
     margin-top: 2em;
     align-self: flex-end;
