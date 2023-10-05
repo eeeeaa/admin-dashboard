@@ -34,6 +34,7 @@ a {
     text-decoration: none;
 }
 
+
 li {
     list-style: none;
 }
@@ -42,7 +43,7 @@ li {
     cursor: pointer;
 }
 
-.material-symbols-outlined:hover {
+a:hover {
     color: var(--hover-color);
     transition: all 0.1 ease;
 }
@@ -71,6 +72,7 @@ li {
     display: grid;
     justify-content: space-between;
     grid-template: 1fr 8fr/1fr 5fr;
+    max-height: 100vh;
 }
 
 .container .header {
@@ -204,11 +206,10 @@ li {
 
 .container .content {
     grid-area: 2/2/-1/-1;
-
     display: grid;
     gap:2em;
     padding: 2em;
-    grid-template: auto 1fr/2fr 1fr;
+    grid-template: auto 1fr/3fr 1fr;
 }
 
 .container .content .section-title {
@@ -236,7 +237,7 @@ li {
 
     display: grid;
     gap:2em;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
 }
 
 .container .content .projects .project-card {
@@ -247,7 +248,7 @@ li {
     box-shadow: 1px 1px 5px 0px var(--shadow-color);
 
     display: flex;
-    min-height: 280px;
+    min-height: 300px;
     flex-direction: column;
     justify-content: center;
 }
@@ -327,5 +328,11 @@ li {
     grid-area: 1/1/-1/2;
     justify-self: center;
     align-self: center;
+}
+
+.container .content .projects .project-card:hover,
+.container .content .trending .trending-profile:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease;
 }
 
